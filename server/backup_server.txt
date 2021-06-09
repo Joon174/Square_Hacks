@@ -1,0 +1,75 @@
+const dotenv = require('dotenv').config();
+const express = require("express");
+const cookieParser = require('cookie-parser');
+const md5 = require('md5');
+const cors = require("cors");
+const { ApiError, Client, Environment } = require('square');
+const app = express();
+// app.use(express.static(__dirname + '/public'));
+// app.set('view engine', 'ejs');
+
+// const nodemon = require("nodemon");
+// const bodyParser = require("body-parser");
+// app.use(cors());
+
+app.use(cookieParser());
+
+//env stuff
+const { PORT, SQ_ENVIRONMENT, SQ_APPLICATION_ID, SQ_APPLICATION_SECRET } = process.env;
+let basePath;
+let environment;
+if (SQ_ENVIRONMENT.toLowerCase() === "production") {
+  basePath = `https://connect.squareup.com`;
+  environment = Environment.Production;
+} else if (SQ_ENVIRONMENT.toLowerCase() === "sandbox") {
+  basePath = `https://connect.squareupsandbox.com`;
+  environment = Environment.Sandbox;
+} else {
+  console.warn('Unsupported value for SQ_ENVIRONMENT in .env file.');
+  process.exit(1);
+}
+
+// Check if example secrets were set
+if (!SQ_APPLICATION_ID || !SQ_APPLICATION_SECRET) {
+  console.warn('\x1b[33m%s\x1b[0m', 'Missing secrets! Configure set values for SQ_APPLICATION_ID and SQ_APPLICATION_SECRET in a .env file.');
+  process.exit(1);
+}
+
+// Port stuff
+const port = PORT || "3000";
+const messages = require('./messages');
+const e = require('express');
+
+// Configure Square default client
+const client = new Client({
+  environment: environment
+});
+
+// INCLUDE PERMISSIONS YOU WANT YOUR SELLER TO GRANT YOUR APPLICATION
+const scopes = [
+  "ITEMS_READ",
+  "MERCHANT_PROFILE_READ",
+  "PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS",
+  "PAYMENTS_WRITE",
+  "PAYMENTS_READ"
+];
+
+app.get('/callback', (req, res) => {
+  try {
+    const response = client.oAuthApi.obtainToken({
+      clientId: process.env.SQ_APPLICATION_ID,
+      clientSecret: process.env.SQ_APPLICATION_SECRET,
+      code: 'response_type',
+      grantType: 'authorization_code',
+      scopes: scopes
+    });
+
+    console.log(response.result);
+    res.json(response.data)
+  } 
+  catch(error) {
+  console.log(error);
+  }
+});
+
+app.listen(port)
