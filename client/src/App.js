@@ -1,13 +1,12 @@
 import "./App.css";
-import Login from "./components/Login";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Dashboard from "./components/Dashboard";
-
-const code = new URLSearchParams(window.location.search).get("code");
+import Dashboard from "./dashboard/dashboard";
+import SignInPage from "./signInPage/signInPage";
 
 function App() {
-  return code ? <Dashboard code={code} /> : <Login />;
+  return (
+    // <Dashboard />
+    <SignInPage />
+  );
 }
 
 export default App;
-

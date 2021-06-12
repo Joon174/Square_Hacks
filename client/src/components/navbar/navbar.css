@@ -1,0 +1,30 @@
+.navWrapper {
+  display: flex;
+  flex-direction: row;
+  background: black;
+  height: 8vh;
+}
+
+.navList {
+  display: flex;
+  width: 100%;
+  background: grey;
+  justify-content: space-between;
+}
+
+.navItem {
+  display: flex;
+  padding: 0.5em;
+  background: yellow;
+  color: blue;
+  cursor: pointer;
+}
+
+.navItem.navLogo {
+  display: flex;
+  flex: 2;
+}
+.navItem.navMenu {
+  display: flex;
+  flex: 1;
+}
