@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .signInWrapper {
   background: rgb(17, 17, 39);
   width: 100vw;
@@ -7,15 +12,16 @@
 
 .signInContainer {
   background: white;
-  width: 70vw;
+  width: 40vw;
   height: 70vh;
-  padding: 2em 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
   border: 0.1px solid #999;
   border-radius: 25px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   /* box-shadow: 1px 1px #999; */
 }
 
@@ -28,7 +34,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 0px;
 }
 
 .signInItem {
@@ -82,9 +87,15 @@
 .signInInput[type="text"],
 [type="password"] {
   width: 100%;
-  padding: 12px 20px;
+  /* padding: 12px 20px; */
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #999;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .signInContainer {
+    width: 80vw;
+  }
 }

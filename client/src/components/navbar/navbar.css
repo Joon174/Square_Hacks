@@ -1,30 +1,46 @@
 .navWrapper {
-  display: flex;
-  flex-direction: row;
-  background: black;
-  height: 8vh;
+  background: #ef5350;
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  overflow: hidden;
 }
-
 .navList {
   display: flex;
-  width: 100%;
-  background: grey;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
+.navItem:nth-child(1) {
+  margin-right: auto;
+}
 .navItem {
-  display: flex;
-  padding: 0.5em;
-  background: yellow;
-  color: blue;
+  width: 5rem;
+  height: 100%;
   cursor: pointer;
 }
 
-.navItem.navLogo {
+.navTitle {
+  height: 100%;
   display: flex;
+  padding-left: 1rem;
   flex: 2;
+  border-bottom: 5px solid transparent;
+  text-align: center;
 }
-.navItem.navMenu {
-  display: flex;
-  flex: 1;
+
+@media screen and (max-width: 768px) {
+  .navItem:nth-child(1) {
+    margin: 0;
+  }
+
+  .navTitle {
+    display: none;
+  }
 }

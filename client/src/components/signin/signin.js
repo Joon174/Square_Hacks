@@ -1,7 +1,6 @@
 import React from "react";
 import { ColorButton, useStyles } from "../button/button";
-import swordLogo from "./sword.png";
-import squareLogo from "./square.png";
+import swordLogo from "../../Images/sword.png";
 import "./signin.css";
 
 const SignIn = () => {
