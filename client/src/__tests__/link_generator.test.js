@@ -1,13 +1,8 @@
 import React from 'react';
-import link_generation from '.link_generation';
+import event_page_generator from '.event_page_generator';
 
-test('Parse  JSONObject', () => {
+test('Parse  form_prop', () => {
     JSONObject 
-    const link_generator = LinkGenerator();
+    const event_page_generator = EventPageGenerator();
 
 });
-
-test('Encoding scheme', () => {
-
-});
-

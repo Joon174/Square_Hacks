@@ -26,7 +26,7 @@ yarn-error.log*
 
 #modules
 *node_modules/
-client/package,json
+client/package.json
 client/package-lock.json
 
 .vscode/*
