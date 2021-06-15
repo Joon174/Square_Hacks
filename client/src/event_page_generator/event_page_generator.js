@@ -1,11 +1,13 @@
 /**
- *  Bracket Generator
+ *  EventPageGenerator
  *  @brief Class to generate new page(s) based on form information and unique hyperlink to Component.
  *  
  *  @author Joon You Tan  
  */
 
 import React from "react";
+import bracket_generator from ".bracket_generator"
+import server_handler from ".server_handler"
 
 // Data struct instance for the event generation page.
 function FormStruct() {
@@ -17,26 +19,6 @@ function FormStruct() {
 };
 
 
-
-// Will generate a HTML component for the bracket specified.
-class BracketGenerator {
-    constructor() {
-        this.available_brackets = ['single-elimination', 'double-elimination'];
-    }
-
-    // Return big fat structure:
-    generate_bracket() {
-        // TODO: Create sample html structure for above bracket formats.
-        // if the number of participants is even:
-            // create low layer for all participants
-            // create a parent for a pair of children in a layer higher in heirarchy.
-            // Repeat until the highest layer is formed with only one possible parent
-        // if the number of participants is odd:
-            // create a low layer for all participants
-            // IDK what to do with the odd participant yet. TODO for future self...
-    }
-}
-
 // EventPage Generator
 class EventPageGenerator extends Component{
     constructor() {
@@ -47,6 +29,7 @@ class EventPageGenerator extends Component{
         this.create_event_page = this.create_event_page.bind(this);
         this.form = FormStruct();
         this.bracket_generator = BracketGenerator();
+        this.server_handler = ServerHandler("8.8.8.8");
     }
 
     // Sample form format and extract relevant information.
