@@ -1,0 +1,10 @@
+:root {
+  font-size: 16px;
+  --primary-color: rgb(17, 17, 39);
+  --secondary-color: #ef5350;
+}
+
+.paypage-wrapper {
+  background: var(--primary-color);
+  height: 100vh;
+}
