@@ -14,7 +14,7 @@ E.g. `git checkout -b jtan/awesome-feature`
 ### How to git: the definitive guide
 Here's  a rough checklist of what you should do with your branch whenever you're working on it:
 - Before work:
-1. `git checkout master`
+1. `git checkout main`
 2. `git pull`
 3. `git checkout your-initials/awesome-feature`
 
