@@ -14,7 +14,7 @@ E.g. `git checkout -b jtan/awesome-feature`
 ### How to git: the definitive guide
 Here's  a rough checklist of what you should do with your branch whenever you're working on it:
 - Before work:
-1. `git checkout master`
+1. `git checkout main`
 2. `git pull`
 3. `git checkout your-initials/awesome-feature`
 
@@ -23,20 +23,20 @@ Remember to always commit! No need to *push*  but be sure to push often so all o
 
 Occasioanally, you would want to do the following:
 1. `git fetch --all`
-2. `git rebase origin/master`
+2. `git rebase origin/main`
 
-This will keep your branch updated to the latest changes in master. This will prevent any merge conflicts (most of them anyway) from corrupting your branch.
+This will keep your branch updated to the latest changes in main. This will prevent any merge conflicts (most of them anyway) from corrupting your branch.
 **PLEASE** do this.  Once you have commited enough and want to push your changes do:
 3. `git push --force`
 
-If you do not and did a `git pull` it will try to merge what you have from the old log, apply the new features then update master with all those changes again!
+If you do not and did a `git pull` it will try to merge what you have from the old log, apply the new features then update main with all those changes again!
 So be careful not to burn the git tree!
 
-*Note: the master branch will hereon out be protected and be the default branch for the entirety of this project sayeth the Lord (me, Joon)*
+*Note: the main branch will hereon out be protected and be the default branch for the entirety of this project sayeth the Lord (me, Joon)*
 
-### About merging into master
-Since we're aiming to win and don't want to rot code with some future commit, there will be *protection rules* for merging into master.
-If **ANY** feature is to be merged into master it must be both **reviewed** and **approved** before going in. We don't want premature merging which may break code.
+### About merging into main
+Since we're aiming to win and don't want to rot code with some future commit, there will be *protection rules* for merging into main.
+If **ANY** feature is to be merged into main it must be both **reviewed** and **approved** before going in. We don't want premature merging which may break code.
 
 <!-- Requirements -->
 ## Requirements
