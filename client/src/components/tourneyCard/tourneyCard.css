@@ -1,0 +1,39 @@
+.tourneyCard-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  margin-bottom: 5px;
+  background: linear-gradient(#d3bcc0, #f2d7ee);
+  cursor: pointer;
+  border-left: 6px transparent red;
+  box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
+    inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
+}
+
+.tourneyCard-wrapper:hover {
+  border-left: 6px solid red;
+  background: linear-gradient(#8b7a7d, #b8a1b4);
+}
+
+.tourneyCard-wrapper:last-child {
+  margin-bottom: 0px;
+}
+.tourneyCard-right {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 2;
+}
+.tourneyCard-left {
+  height: 5rem;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding: 0.3em;
+}

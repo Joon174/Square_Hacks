@@ -1,0 +1,40 @@
+@import "../App.css";
+
+.calendarPage-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary-gradient);
+}
+
+.calendarPage-mid {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.calendarPage-left {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+}
+
+.calendarPage-right {
+  display: flex;
+  height: 100vh;
+  flex: 1;
+}
+
+.calendarPage-title {
+  color: white;
+  /* background: yellow;/ */
+  letter-spacing: 1rem;
+  width: 50vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  margin-bottom: 1rem;
+}

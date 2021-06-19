@@ -10,7 +10,7 @@ const Navbar = ({ isLoggedin = true }) => {
       <ul className="navList">
         <li className="navItem navLogo">
           <Button primary dark className="navLogoItem">
-            <GiSpinningSword big />
+            <GiSpinningSword />
           </Button>
         </li>
         <li className="navItem navTitle">

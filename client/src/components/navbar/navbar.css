@@ -1,9 +1,11 @@
+@import "../../App.css";
 .navWrapper {
-  background: #ef5350;
+  background: var(--navbar-color);
   width: 100vw;
   height: auto;
   position: fixed;
   overflow: hidden;
+  /* filter: blur(10px); */
 }
 .navList {
   display: flex;

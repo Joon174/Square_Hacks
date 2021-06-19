@@ -1,0 +1,53 @@
+@import "../../App.css";
+
+.playerCard-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  margin-bottom: 5px;
+  background: linear-gradient(#d3bcc0, #f2d7ee);
+  box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
+    inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
+}
+
+.playerCard-wrapper:last-child {
+  margin-bottom: 0px;
+}
+
+.playerCard-left {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+.playerCard-right {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+
+.playerCard-mid1 {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  width: 100%;
+}
+
+.playerCard-image {
+  display: flex;
+  width: 50%;
+  height: 50%;
+}
+
+.playerCard-mid2 {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex: 3;
+}
