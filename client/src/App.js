@@ -11,12 +11,11 @@ function App() {
   return (
     // <Dashboard />
     // <SignInPage />
-    // <SignUpPage />
+    <SignUpPage />
     // <PaymentPage />
     // <CalendarPage />
     // <LeaderboardPage />
-    //<SignInPage />
-    <Payments paymentAmount="4.20" orderId="69" />
+    // <Payments paymentAmount="4.20" tournamentId="69" />
   );
 }
 

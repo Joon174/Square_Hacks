@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { ColorButton, useStyles } from "../button/button";
-import swordLogo from "./sword.png";
-import squareLogo from "./square.png";
 import "./payments.css";
 import { Client, Enviroment } from "square";
 
@@ -95,18 +93,20 @@ function Payments(props) {
 
   async function addPayment(token) {
     const body = JSON.stringify({
-      locationId,
+      locationId: LOCATION_ID,
       sourceId: token,
-      orderId: orderId,
     });
 
-    const paymentResponse = await fetch("/payment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body,
-    });
+    const paymentResponse = await fetch(
+      "127.0.0.1:8000/participant.make_payment",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body,
+      }
+    );
 
     if (paymentResponse.ok) {
       return paymentResponse.json();
@@ -221,7 +221,14 @@ function Payments(props) {
   };
 
   const initializeSquareCard = async () => {
-    const card = await squarePayments.card();
+    const cardStyle = {
+      ".input-container": {
+        borderRadius: "6px",
+      },
+    };
+    const card = await squarePayments.card({
+      style: cardStyle,
+    });
     setSquareCard(card);
     attachCard(card);
   };
@@ -259,7 +266,8 @@ function Payments(props) {
     padding: 16,
     fontFamily: "sans-serif",
     fontSize: "1rem",
-    marginBottom: 16,
+    marginTop: 0,
+    marginBottom: 0,
     borderRadius: 8,
     borderWidth: 0,
   };
@@ -278,46 +286,20 @@ function Payments(props) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "2rem",
+        // padding: "0.5rem",
+        height: "100%",
       }}
     >
-      {/* Apple Pay will not work with the demo Square IDs used in this file,
-      but it will if you have a valid square account with Apple Pay configured
-      correctly. If so, change the IDs to your sandbox and try it out */}
-      {
-        <div
-          id="apple-pay"
-          onClick={() => handlePaymentMethodSubmission(applePay)}
-          style={{
-            backgroundColor: "white",
-            padding: 11,
-            borderColor: "#bbb",
-            borderWidth: 1,
-            boxShadow: "0px 2px 4px #00000033",
-            fontFamily: "sans-serif",
-            fontSize: "0.9rem",
-            marginBottom: 16,
-            borderRadius: 3,
-          }}
-        >
-          <span>Buy with Apple Pay</span>
-        </div>
-      }
-      <div style={{ marginBottom: 24 }}>
-        <div
-          id="google-pay"
-          onClick={() => handlePaymentMethodSubmission(googlePay)}
-        />
-      </div>
-      <form id="payment-form">
+      <form id="payment-form" style={{ height: "100%" }}>
         <div
           style={{
+            height: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <div id="card-container"></div>
+          <div id="card-container" style={{ height: "100%" }}></div>
           <button
             id="card-button"
             type="button"
@@ -325,7 +307,7 @@ function Payments(props) {
             disabled={!isCardFieldsValid || isSubmitting}
             onClick={() => handlePaymentMethodSubmission(squareCard)}
           >
-            Pay {props.paymentAmount}
+            Pay ${props.paymentAmount}
           </button>
         </div>
       </form>

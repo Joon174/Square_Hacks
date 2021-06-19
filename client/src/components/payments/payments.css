@@ -1,15 +1,15 @@
 .PaymentsWrapper {
   background: rgb(17, 17, 39);
   width: 100vw;
-  height: 100vh;
+  height: 10vh;
   display: flex;
 }
 
 .PaymentsContainer {
   background: white;
-  width: 70vw;
-  height: 70vh;
-  padding: 2em 0px;
+  width: 50vw;
+  height: 50vh;
+  padding: 1em 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,12 +91,13 @@
 
 #payment-form {
   max-width: 550px;
-  min-width: 300px;
-  margin: 150px auto;
+  min-width: 100px;
+  padding-top: 1rem;
+  /* margin: 150px auto; */
 }
 
 #card-container {
-  margin-top: 45px;
+  margin-top: 1px;
   /* this height depends on the size of the container element */
   /* We transition from a single row to double row at 485px */
   /* Settting this min-height minimizes the impact of the card form loading */
