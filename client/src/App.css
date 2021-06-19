@@ -4,3 +4,23 @@
   padding: 0;
   font-family: "Encode Sans Expanded", sans-serif;
 }
+
+:root {
+  font-size: 16px;
+  --primary-color: rgb(17, 17, 39);
+  --secondary-color: #ef5350;
+  --navbar-color: #ef5350;
+  --primary-gradient: linear-gradient(
+    to bottom,
+    #111127,
+    #1b1c33,
+    #26263f,
+    #31324c,
+    #3d3d59
+  );
+  --tertiary-color: #292d31;
+  --font-color: #424242;
+  --bg-color: #ffffff;
+  --heading-color: #292922;
+  --white-color: #ffffff;
+}

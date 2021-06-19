@@ -1,0 +1,49 @@
+.eventCard-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 5rem;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  margin-bottom: 5px;
+  background: linear-gradient(#d3bcc0, #f2d7ee);
+  box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255, 255, 255, 0.5),
+    inset -0.2em -0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
+}
+
+.eventCard-wrapper:last-child {
+  margin-bottom: 0px;
+}
+.eventCard-left {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+.eventCard-right {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  padding: 0.3em;
+}
+
+.eventCard-mid {
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  flex: 3;
+  list-style: none;
+  flex-direction: column;
+}
+
+.eventCard-mid-title {
+  display: flex;
+}
+
+.eventCard-mid-stage {
+  display: flex;
+}

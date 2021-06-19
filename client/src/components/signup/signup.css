@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.signInWrapper {
+  background: rgb(17, 17, 39);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.signInContainer {
+  background: white;
+  width: 40vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 0.1px solid #999;
+  border-radius: 25px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* box-shadow: 1px 1px #999; */
+}
+
+.signInList {
+  display: flex;
+  list-style: none;
+  width: 80%;
+  height: 100%;
+  /* background: blue; */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.signInItem {
+  display: flex;
+  /* background: red; */
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.inputBox {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.inputBox h5 {
+  /* background: red; */
+  width: 100%;
+  display: flex;
+  text-align: left;
+}
+
+.signInItem img {
+  /* width: 10vw; */
+  height: 10vh;
+}
+
+.signUpText {
+  margin: 0;
+}
+
+.signUpLink {
+  cursor: pointer;
+  color: blue;
+  padding-left: 0.5rem;
+}
+
+.signUpLink:hover {
+  transform: scale(1.1);
+  transform: skewX(20deg);
+  transition: all 0.2s ease-in-out;
+}
+
+.signInItem.Button {
+  /* background: yellow; */
+}
+
+.signInInput[type="text"],
+[type="password"] {
+  width: 100%;
+  /* padding: 12px 20px; */
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #999;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .signInContainer {
+    width: 80vw;
+  }
+}

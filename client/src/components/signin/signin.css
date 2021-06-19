@@ -88,3 +88,9 @@
   border: 1px solid #999;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 768px) {
+  .signInContainer {
+    width: 80vw;
+  }
+}
